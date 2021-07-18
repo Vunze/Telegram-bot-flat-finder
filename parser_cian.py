@@ -36,7 +36,7 @@ class Parser:
         link = new_flat.select("div[data-name='LinkArea']")[0].select("a")[0].get('href')
         price_long = new_flat.select("div[data-name='LinkArea']")[0].select("div[data-name='ContentRow']")[1].text
         price_per_month = "".join(price_long[:price_long.find("₽/мес") - 1].split())
-        self.result.append(price_per_month + ',' + link + "\n")
+        self.result.append(link + ',' + price_per_month + "\n")
 
     def run(self):
         # change this range to control the amount of flats being parsed
